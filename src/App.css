@@ -1,38 +1,212 @@
-.App {
+:root{
+  --primary: #5043FF;
+}
+
+body {
+  background-color: #ffffff;
+  margin:0;
+  padding:0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Start Global css */
+a {
+  text-decoration: none;
+  color:#333;
+  cursor: pointer;
+}
+a:hover {
+  color: var(--primary);
+}
+
+h1,h2,h3,h4,h5 {
+  margin:0;
+  padding:0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a.select-offer-btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  color: #fff;
+}
+.select-offer-btn {
+  background: linear-gradient(270.05deg, #00F2AD -12.43%, #6145FF 18.02%, #8C4AFF 72.32%, #C350FF 109.87%);
+}
+main {
+  width: 1200px;
+  margin: 50px auto;
+}
+h2.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 60px;
+}
+/* End Global css */
+
+/* Start Slider css */
+.slick-slide {
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+.slick-dots li.slick-active button:before {
+  color: #00F2AD !important;
+}
+.slick-dots {
+  top: -40px !important;
+  bottom: unset !important;
+}
+
+.slick-dots li button:before {
+  font-size: 15px !important;
+}
+/* End Slider css */
+
+/* Start Popup css */
+button.close {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.popup-content {
+  background: transparent !important;
+  border: 0 !important;
+  -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}
+
+.popup-content .modal {
+  border: 3px solid #01040C;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+.popup-content .header {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.service-item {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.learn-more-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  margin: 20px 0px;
+  cursor: pointer;
 }
+.learn-more-btn:hover {
+  color: var(--primary);
+}
+/* animation */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* End Popup css */
+
+/* Start Not Found css */
+.not-found {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}
+.not-found img { 
+  width: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.not-found h1 {
+  margin: 20px 0px;
+}
+/* End Not Found css */
+
+/* Start Steps form css */
+.form-bg {
+  background: url(../public/images/bg.jpg) no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+  top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.ccform {
+  width: 400px;
+  background-color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+form#offersubmit {
+  margin-top: 30px;
+}
+
+.form-control {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  border: 0px;
+  box-sizing: border-box;
+  margin-top: 15px;
+  border-bottom: 1px solid #01040C;
+}
+
+h2.package-name {
+  margin-bottom: 25px;
+}
+a.change-pacage {
+  margin-bottom: 40px;
+  display: block;
+}
+
+.btn-submit {
+  width: 100%;
+  border: 0px;
+  padding: 8px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+/* End Steps form css */
+
+
+
+/* sm */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* xs */
+@media (max-width: 767px) {
+
+  main {
+    width: 100%;
+    margin: 50 auto;
   }
 }

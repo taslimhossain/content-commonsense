@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import 'reactjs-popup/dist/index.css';
 import './App.css';
+
+import Home from './pages/Home/Home';
+import NotFound from './pages/NotFound/NotFound';
+import Steps from './pages/Steps/Steps';
+import FormDataProvider from './contexts/FormData/FormDataProvider';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <BrowserRouter>
+        <FormDataProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="steps/:step/:serviceid/:serviceslug" element={<Steps />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </FormDataProvider>
+      </BrowserRouter>
+
     </div>
   );
 }
