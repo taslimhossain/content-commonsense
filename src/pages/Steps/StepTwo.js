@@ -1,16 +1,13 @@
-import React, { useContext, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { FormDataContext } from '../../contexts/FormData/FormDataProvider';
-
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { getFormValue } from '../../action';
 
 const StepTwo = (props) => {
-    const {ahandleOnChange} = useContext(FormDataContext);
-    const history = useNavigate();
 
-    const {id, tite, slug} = props.stepData;
-
-    const serviceTitle = tite != '' ? tite : '';
     const [fromData, setFormData] = useState({})
+    const history = useNavigate();
+    const {serviceid, serviceTitle, serviceslug, userFormData} = props.stepData;
+
     const handleOnChange = e => {
         const { name, value } = e.target;
         setFormData((fromData) => ({ ...fromData, [name]: value }));
@@ -18,12 +15,10 @@ const StepTwo = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(fromData)
-        history(`/steps/3/${id}/${slug}`);
+        userFormData( fromData )
+        history(`/steps/3/${serviceid}/${serviceslug}`);
     }
 
-
-    
     return (
         <div className="ccform">
             <p>You selected</p>
@@ -32,13 +27,12 @@ const StepTwo = (props) => {
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
                     <label htmlFor="useremail" className="form-label">What is your email address? *</label>
-                    <input type="text" name="useremail" onChange={handleOnChange} className="form-control" id="useremail" placeholder="name@domain.com"/>
+                    <input type="email" name="useremail" defaultValue={getFormValue('useremail')} onChange={handleOnChange} className="form-control" id="useremail" placeholder="name@domain.com" required />
                 </div>
                 <div className="field-row">
                     <label htmlFor="usermobile" className="form-label">What is your phone number? *</label>
-                    <input type="text" name="usermobile" onChange={handleOnChange} className="form-control" id="usermobile" placeholder="0123 456 7890"/>
+                    <input type="text" name="usermobile" defaultValue={getFormValue('usermobile')} onChange={handleOnChange} className="form-control" id="usermobile" placeholder="0123 456 7890" required/>
                 </div>
-                <input type="hidden" name="servicename" id='serviceName' value={serviceTitle} />
                 <button className="select-offer-btn btn-submit" type="submit">Next</button>
             </form>
         </div>

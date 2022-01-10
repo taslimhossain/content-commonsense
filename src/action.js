@@ -4,3 +4,21 @@ export const getServices = {
     3 : 'Only Pay For Leads You Receive (No Management Fee)',
 };
 
+export const setDataStorage = (data) => {
+    localStorage.setItem('content-commonsense', JSON.stringify(data) );
+}
+
+export const getDataStorage = () => {
+    const formData = localStorage.getItem('content-commonsense');
+    return JSON.parse(formData);
+}
+
+export const getFormValue = (key) => {
+
+    const formData = localStorage.getItem('content-commonsense');
+    const formStorage = JSON.parse(formData);
+    if( formStorage !== null && formStorage[key] !== undefined && formStorage[key] !== '' ){
+        return formStorage[key];
+    }
+    return '';
+}

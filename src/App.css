@@ -193,6 +193,9 @@ a.change-pacage {
   margin-top: 40px;
   cursor: pointer;
 }
+.field-row {
+  margin-top: 25px;
+}
 /* End Steps form css */
 
 
@@ -203,10 +206,17 @@ a.change-pacage {
 }
 
 /* xs */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
   main {
     width: 100%;
     margin: 50 auto;
   }
+  .form-bg {
+    background: #ffffff;
+  }
+  .ccform {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
 }

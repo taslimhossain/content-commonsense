@@ -1,15 +1,13 @@
-import React, { useContext, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { FormDataContext } from '../../contexts/FormData/FormDataProvider';
-
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { getFormValue } from '../../action';
 
 const StepOne = (props) => {
-    const {ahandleOnChange} = useContext(FormDataContext);
-    const history = useNavigate();
 
-    const {id, tite, slug} = props.stepData
-    const serviceTitle = tite != '' ? tite : '';
     const [fromData, setFormData] = useState({})
+    const history = useNavigate();
+    const {serviceid, serviceTitle, serviceslug, userFormData} = props.stepData;
+
     const handleOnChange = e => {
         const { name, value } = e.target;
         setFormData((fromData) => ({ ...fromData, [name]: value }));
@@ -17,12 +15,10 @@ const StepOne = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(fromData)
-        history(`/steps/2/${id}/${slug}`);
+        userFormData( fromData )
+        history(`/steps/2/${serviceid}/${serviceslug}`);
     }
 
-
-    
     return (
         <div className="ccform">
             <p>You selected</p>
@@ -32,13 +28,8 @@ const StepOne = (props) => {
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
                     <label htmlFor="username" className="form-label">What is your name? *</label>
-                    <input type="text" name="ausername" onChange={handleOnChange} className="form-control" id="username" placeholder="Full name"/>
+                    <input type="text" name="username" defaultValue={getFormValue('username')} is_required="true" onChange={handleOnChange} className="form-control" id="username" placeholder="Full name" required />
                 </div>
-                <div className="field-row">
-                    <label htmlFor="eusername" className="form-label">What is your name? *</label>
-                    <input type="text" name="eusername" onChange={handleOnChange} className="form-control" id="eusername" placeholder="Full name"/>
-                </div>
-                <input type="hidden" name="servicename" id='serviceName' value={serviceTitle} />
                 <button className="select-offer-btn btn-submit" type="submit">Next</button>
             </form>
         </div>
