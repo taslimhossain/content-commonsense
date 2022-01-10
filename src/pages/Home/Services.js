@@ -11,6 +11,7 @@ const Services = () => {
           dots: true,
           draggable: true,
           infinite: false,
+          arrows: false,
           speed: 500,
           slidesToShow: 3,
           slidesToScroll: 3,

@@ -13,6 +13,7 @@ import StepEight from './StepEight ';
 import StepNine from './StepNine';
 import StepTen from './StepTen';
 import StepEleven from './StepEleven';
+import Preeloader from '../../Preeloader';
 
 const Steps = () => {
 
@@ -38,7 +39,6 @@ const Steps = () => {
     }
 
     const FormData = () => {
-
         switch (stepNumber) {
             case 1:
                return <StepOne stepData={serviceData} userState={userFormData} />
@@ -67,15 +67,17 @@ const Steps = () => {
             default:
                 return <StepOne />
         }
-
     }
 
     return (
+       <>
+       <Preeloader />
         <main>
             <div className="form-bg"></div>
             <FormData />
             
         </main>
+        </>
     )
 }
 

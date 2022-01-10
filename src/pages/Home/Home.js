@@ -1,13 +1,17 @@
 import React from 'react'
+import Preeloader from '../../Preeloader'
 import Services from './Services'
 
 const Home = () => {
     return (
-        <main>
-            <section className='service-list'>
-                <Services />
-            </section>
-        </main>
+        <>
+            <Preeloader />
+            <main>
+                <section className='service-list'>
+                    <Services />
+                </section>
+            </main>
+        </>
     )
 }
 
