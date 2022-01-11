@@ -23,7 +23,7 @@ const StepTen = (props) => {
         <div className="ccform">
             <p>You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
-            <Link to="/" className="change-pacage">Change</Link>
+            <Link to="/services" className="change-pacage">Change</Link>
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
                     <label htmlFor="monthlybudget" className="form-label">What is your proposed advertising budget for each month?</label>

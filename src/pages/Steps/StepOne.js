@@ -23,7 +23,7 @@ const StepOne = (props) => {
         <div className="ccform">
             <p>You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
-            <Link to="/" className="change-pacage">Change</Link>
+            <Link to="/services" className="change-pacage">Change</Link>
             <p>So we can get started, please enter some contact details below</p>
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">

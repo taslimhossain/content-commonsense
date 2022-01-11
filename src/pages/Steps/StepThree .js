@@ -23,7 +23,7 @@ const StepThree  = (props) => {
         <div className="ccform">
             <p>You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
-            <Link to="/" className="change-pacage">Change</Link>
+            <Link to="/services" className="change-pacage">Change</Link>
             <p>Just a few details about your website and company and you are done!</p>
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">

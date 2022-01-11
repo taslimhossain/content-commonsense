@@ -23,7 +23,7 @@ const StepSeven = (props) => {
         <div className="ccform">
             <p>You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
-            <Link to="/" className="change-pacage">Change</Link>
+            <Link to="/services" className="change-pacage">Change</Link>
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
                     <label htmlFor="leadspayment" className="form-label">Of those XXX leads, how many go on to become paying customers?</label>

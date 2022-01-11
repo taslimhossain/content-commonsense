@@ -23,7 +23,7 @@ const StepEight = (props) => {
         <div className="ccform">
             <p>You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
-            <Link to="/" className="change-pacage">Change</Link>
+            <Link to="/services" className="change-pacage">Change</Link>
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
                     <label htmlFor="grossprofit" className="form-label">After all costs and overheads have been accounted for, what is your average gross profit per job?</label>

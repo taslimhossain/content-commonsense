@@ -216,6 +216,34 @@ a.change-pacage {
 }
 /* End Steps form css */
 
+/* Start featured css */
+.featured-area {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  grid-gap: 25px;
+}
+.featured-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  padding: 25px;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 5%);
+}
+.claim-offer {
+  width: 300px;
+  margin: 60px auto;
+}
+.featured-item p {
+  font-size: 17px;
+  line-height: 24px;
+}
+/* End featured css */
+
 
 
 /* sm */
@@ -230,6 +258,16 @@ a.change-pacage {
     width: 100%;
     margin: 50px auto;
   }
+
+  h2.section-title-service {
+    font-size: 32px;
+    line-height: 52px;
+    margin-bottom: 15px;
+  }
+
+  .claim-offer {
+      margin: 15px auto;
+  }
   .form-bg {
     background: #ffffff;
   }
@@ -242,4 +280,17 @@ a.change-pacage {
     width: 350px;
     box-sizing: border-box;
   }
+
+  .featured-area {
+    display: block;
+    padding: 30px;
+  }
+  .featured-item {
+      padding: 0px;
+      margin: 0px;
+      box-shadow: none;
+  }
+
+
+
 }

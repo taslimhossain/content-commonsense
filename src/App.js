@@ -8,6 +8,7 @@ import './App.css';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
 import Steps from './pages/Steps/Steps';
+import Service from './pages/Home/Service';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="steps/:step/:serviceid/:serviceslug" element={<Steps />} />
+            <Route path="/services" element={<Service />} />
+            <Route path="/steps/:step/:serviceid/:serviceslug" element={<Steps />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
       </BrowserRouter>
