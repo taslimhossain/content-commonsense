@@ -21,16 +21,16 @@ const StepTwo = (props) => {
 
     return (
         <div className="ccform">
-            <p>You selected</p>
+            <p className="you-selected">You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
             <Link to="/services" className="change-pacage">Change</Link>
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
-                    <label htmlFor="useremail" className="form-label">What is your email address? *</label>
+                    <label htmlFor="useremail" className="form-label">What is your email address? <span className='required_star'>*</span></label>
                     <input type="email" name="useremail" defaultValue={getFormValue('useremail')} onChange={handleOnChange} className="form-control" id="useremail" placeholder="name@domain.com" required />
                 </div>
                 <div className="field-row">
-                    <label htmlFor="usermobile" className="form-label">What is your phone number? *</label>
+                    <label htmlFor="usermobile" className="form-label">What is your phone number? <span className='required_star'>*</span></label>
                     <input type="text" name="usermobile" defaultValue={getFormValue('usermobile')} onChange={handleOnChange} className="form-control" id="usermobile" placeholder="0123 456 7890" required/>
                 </div>
                 <button className="select-offer-btn btn-submit" type="submit">Next</button>

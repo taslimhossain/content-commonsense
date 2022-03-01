@@ -21,7 +21,7 @@ const StepNine = (props) => {
 
     return (
         <div className="ccform">
-            <p>You selected</p>
+            <p className="you-selected">You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
             <Link to="/services" className="change-pacage">Change</Link>
             <form onSubmit={handleSubmit} id="offersubmit">

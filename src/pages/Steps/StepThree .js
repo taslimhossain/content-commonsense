@@ -21,13 +21,13 @@ const StepThree  = (props) => {
 
     return (
         <div className="ccform">
-            <p>You selected</p>
+            <p className="you-selected">You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
             <Link to="/services" className="change-pacage">Change</Link>
-            <p>Just a few details about your website and company and you are done!</p>
+            <p className="ccfrom-small-title">Just a few details about your website and company and you are done!</p>
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
-                    <label htmlFor="userwebiste" className="form-label">What is your website URL? *</label>
+                    <label htmlFor="userwebiste" className="form-label">What is your website URL? <span className='required_star'>*</span></label>
                     <input type="text" name="userwebiste" defaultValue={getFormValue('userwebiste')} onChange={handleOnChange} className="form-control" id="userwebiste" placeholder="www.domain.com" required />
                 </div>
                 <button className="select-offer-btn btn-submit" type="submit">Next</button>

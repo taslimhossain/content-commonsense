@@ -44,7 +44,7 @@ const Services = () => {
         };
         return (
           <>
-            <h2 className='section-title'> Choose </h2>
+            <h2 className='section-title'> choose<br/>your offer </h2>
             <Slider {...settings}>
              
               <div className='service-item'>
@@ -88,7 +88,6 @@ const Services = () => {
                 </Popup>
                 <Link to="/steps/1/2/completely-free-custom-built-&-optimised-website" className='select-offer-btn'>Select Offer</Link>
               </div>
-
 
               <div className='service-item'>
                 <h2>Only Pay For Leads You Receive (No Management Fee)</h2>

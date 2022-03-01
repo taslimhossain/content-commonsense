@@ -6,7 +6,13 @@ body {
   background-color: #ffffff;
   margin:0;
   padding:0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Futura PT';
+}
+
+p {
+  font-size: 16px;
+  line-height: 21px;
+  margin:0px;
 }
 
 /* Start Global css */
@@ -40,7 +46,7 @@ a:hover {
 h1,h2,h3,h4,h5 {
   margin:0;
   padding:0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Futura PT';
 }
 
 a.select-offer-btn {
@@ -48,18 +54,27 @@ a.select-offer-btn {
   text-align: center;
   padding: 14px;
   color: #fff;
+  font-size: 19px;
+  font-weight: 500;
+}
+.modal a.select-offer-btn {
+  margin-top: 30px;
 }
 .select-offer-btn {
   background: linear-gradient(270.05deg, #00F2AD -12.43%, #6145FF 18.02%, #8C4AFF 72.32%, #C350FF 109.87%);
 }
 main {
   width: 1200px;
-  margin: 50px auto;
+  margin: 40px auto;
 }
 h2.section-title {
   text-align: center;
-  margin-bottom: 60px;
-  font-size: 60px;
+  margin-bottom: 80px;
+  font-size: 64px;
+  line-height: 70px;
+  font-family: 'Brandbe';
+  font-weight: bold;
+  color: #01040C;
 }
 /* End Global css */
 
@@ -100,24 +115,45 @@ button.close {
 
 .popup-content .modal {
   border: 3px solid #01040C;
-  padding: 15px;
+  padding: 30px;
   border-radius: 15px;
   background-color: #ffffff;
 }
 .popup-content .header {
-  font-size: 22px;
-  font-weight: 500;
+  margin-bottom: 18px;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 24px;
+}
+.content p {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 300;
+  margin-bottom: 15px;
 }
 
 .service-item {
   text-align: center;
+  display: flex !important;
+  flex-direction: column;
+  min-height: 300px;
+  justify-content: space-between;
+}
+.service-item h2 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .learn-more-btn {
   background: transparent;
   border: none;
-  font-size: 18px;
-  margin: 20px 0px;
+  font-size: 24px;
   cursor: pointer;
+  font-family: 'Futura PT';
+  font-weight: 300;
+  margin-top: -40px;
 }
 .learn-more-btn:hover {
   color: var(--primary);
@@ -174,12 +210,52 @@ button.close {
 
 .ccform {
   width: 400px;
+  min-height: 570px;
   background-color: #ffffff;
-  padding: 15px;
+  padding: 40px 40px;
+  box-sizing: border-box;
   text-align: center;
+  position: relative;
 }
+p.you-selected {
+  font-weight: 100;
+  font-size: 18px;
+}
+
+p.ccfrom-small-title {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0px;
+  font-weight: 500;
+  font-family: 'Futura PT';
+}
+span.required_star {
+  color: #00F2AD;
+}
+p.congratulations-description {
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 26px;
+}
+form#offersubmit h5 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+label.form-label {
+  color:#01040C;
+  font-size: 22px;
+  font-weight: 300;
+  font-family: 'Futura PT';
+}
+
 form#offersubmit {
-  margin-top: 30px;
+  position: absolute;
+  left: 0;
+  right: 0px;
+  bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .form-control {
@@ -194,22 +270,28 @@ form#offersubmit {
 }
 
 h2.package-name {
+  margin-top: 25px;
   margin-bottom: 25px;
+  font-size: 28px;
+  line-height: 35px;
 }
 a.change-pacage {
   margin-bottom: 40px;
   display: block;
+  font-size: 18px;
+  font-weight: 100;
 }
 
 .btn-submit {
   width: 100%;
   border: 0px;
-  padding: 8px;
+  padding: 12px;
   color: #fff;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 19px;
+  line-height: 21px;
   margin-top: 40px;
   cursor: pointer;
+  font-family: 'Futura PT';
 }
 .field-row {
   margin-top: 25px;
@@ -229,18 +311,23 @@ a.change-pacage {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
   padding: 25px;
   border-radius: 6px 6px 6px 6px;
   box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 5%);
 }
 .claim-offer {
-  width: 300px;
+  width: 350px;
   margin: 60px auto;
 }
 .featured-item p {
-  font-size: 17px;
-  line-height: 24px;
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 300;
+}
+.featured-item img {
+  width: 45px;
+  height: 45px;
 }
 /* End featured css */
 
@@ -256,17 +343,26 @@ a.change-pacage {
 
   main {
     width: 100%;
-    margin: 50px auto;
+    /* margin: 50px auto; */
+    /* margin-bottom:0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; */
+    /* height: 100vh; */
+    padding-bottom:15px;
   }
 
   h2.section-title-service {
-    font-size: 32px;
-    line-height: 52px;
-    margin-bottom: 15px;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
   }
 
   .claim-offer {
-      margin: 15px auto;
+    margin: 0 auto;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
   }
   .form-bg {
     background: #ffffff;
@@ -283,14 +379,21 @@ a.change-pacage {
 
   .featured-area {
     display: block;
-    padding: 30px;
+    padding: 0px 20px;
   }
   .featured-item {
       padding: 0px;
       margin: 0px;
+      margin-bottom: 30px;
       box-shadow: none;
   }
 
+  form#offersubmit{
+    bottom:0px;
+  }
 
+  /* .claim-offer, .featured-area, h2.section-title-service {
+    margin-top:auto;
+  } */
 
 }

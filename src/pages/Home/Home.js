@@ -8,7 +8,7 @@ const Home = () => {
         <>
             <Preeloader />
             <main>
-                <h2 className='section-title section-title-service'> All our services include </h2>
+                <h2 className='section-title section-title-service'> All our<br/>services include </h2>
                 <section className='featured-area'>
                     <div className="featured-item">
                         <img src={icon} alt="content commonsense" />

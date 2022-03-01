@@ -25,17 +25,17 @@ const StepFour = (props) => {
     
     return (
         <div className="ccform">
-            <p>You selected</p>
+            <p className="you-selected">You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
             <Link to="/services" className="change-pacage">Change</Link>
 
             <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
-                    <label htmlFor="companyname" className="form-label">What is your company called? *</label>
+                    <label htmlFor="companyname" className="form-label">What is your company called? <span className='required_star'>*</span></label>
                     <input type="text" name="companyname" defaultValue={getFormValue('companyname')} onChange={handleOnChange} className="form-control" id="companyname" placeholder="company name" required/>
                 </div>
                 <div className="field-row">
-                    <label htmlFor="industry" className="form-label">What industry do you operate in? *</label>
+                    <label htmlFor="industry" className="form-label">What industry do you operate in? <span className='required_star'>*</span></label>
                     <input type="text" name="industry" defaultValue={getFormValue('industry')} onChange={handleOnChange} className="form-control" id="industry" placeholder="industry" required />
                 </div>
                 <button className="select-offer-btn btn-submit" type="submit">Next</button>
