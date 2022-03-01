@@ -4,17 +4,19 @@ import { getFormValue } from '../../action';
 
 const StepOne = (props) => {
 
-    const [fromData, setFormData] = useState({})
     const history = useNavigate();
     const {serviceid, serviceTitle, serviceslug, userFormData} = props.stepData;
+    const [fromData, setFormData] = useState({'serviceid' : serviceid})
 
     const handleOnChange = e => {
         const { name, value } = e.target;
+        console.log(name, value);
         setFormData((fromData) => ({ ...fromData, [name]: value }));
     }
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
+      //  setFormData((fromData) => ({ ...fromData, 'serviceid': serviceid }));
         userFormData( fromData )
         history(`/steps/2/${serviceid}/${serviceslug}`);
     }

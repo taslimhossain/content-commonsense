@@ -29,7 +29,7 @@ const StepEleven = (props) => {
                     <label htmlFor="campaignslocation" className="form-label">Which geographic locations do you serve/should we target with your advertising campaigns?</label>
                     <input type="text" name="campaignslocation" defaultValue={getFormValue('campaignslocation')} is_required="true" onChange={handleOnChange} className="form-control" id="campaignslocation" placeholder="Geographic locations" />
                 </div>
-                <button className="select-offer-btn btn-submit" type="submit">Next</button>
+                <button className="select-offer-btn btn-submit" type="submit">Claim Offer</button>
             </form>
         </div>
     )

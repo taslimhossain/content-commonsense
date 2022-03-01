@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { getFormValue } from '../../action';
+import { getFormValue, sendEmail } from '../../action';
 
 const StepFour = (props) => {
 
@@ -19,6 +19,10 @@ const StepFour = (props) => {
         if( parseInt(serviceid) === 3 ) {
             history(`/steps/5/${serviceid}/${serviceslug}`);
         } else {
+
+            const dbdata = sendEmail();
+            console.log('Hello wrld', dbdata)
+
             history(`/steps/99/${serviceid}/${serviceslug}`);
         }
     }
@@ -38,7 +42,7 @@ const StepFour = (props) => {
                     <label htmlFor="industry" className="form-label">What industry do you operate in? <span className='required_star'>*</span></label>
                     <input type="text" name="industry" defaultValue={getFormValue('industry')} onChange={handleOnChange} className="form-control" id="industry" placeholder="industry" required />
                 </div>
-                <button className="select-offer-btn btn-submit" type="submit">Next</button>
+                <button className="select-offer-btn btn-submit" type="submit"> { parseInt(serviceid) === 3 ? 'Next' : 'Claim Offer' }  </button>
             </form>
         </div>
     )

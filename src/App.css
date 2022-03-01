@@ -54,7 +54,8 @@ a.select-offer-btn {
   text-align: center;
   padding: 14px;
   color: #fff;
-  font-size: 19px;
+  font-size: 1.375rem;
+  line-height: 1;
   font-weight: 500;
 }
 .modal a.select-offer-btn {
@@ -64,7 +65,7 @@ a.select-offer-btn {
   background: linear-gradient(270.05deg, #00F2AD -12.43%, #6145FF 18.02%, #8C4AFF 72.32%, #C350FF 109.87%);
 }
 main {
-  width: 1200px;
+  width: 1024px;
   margin: 40px auto;
 }
 h2.section-title {
@@ -126,8 +127,8 @@ button.close {
   line-height: 24px;
 }
 .content p {
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 1.375rem;
+  line-height: 1.5;
   font-weight: 300;
   margin-bottom: 15px;
 }
@@ -136,20 +137,21 @@ button.close {
   text-align: center;
   display: flex !important;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 270px;
   justify-content: space-between;
 }
 .service-item h2 {
   font-weight: 400;
-  font-size: 36px;
-  line-height: 43px;
-  padding-left: 30px;
-  padding-right: 30px;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .learn-more-btn {
   background: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 1.75rem;
+  line-height: 1.4;
   cursor: pointer;
   font-family: 'Futura PT';
   font-weight: 300;
@@ -373,9 +375,14 @@ a.change-pacage {
     width: 100%;
   }
   .popup-content {
-    width: 350px;
+    width: 80%;
     box-sizing: border-box;
   }
+  .content p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+}
 
   .featured-area {
     display: block;

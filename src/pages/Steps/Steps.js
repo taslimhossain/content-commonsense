@@ -27,7 +27,8 @@ const Steps = () => {
         const newData = { ...userData, ...data };
         setUserData(newData)
         const dbdata = getDataStorage();
-        const newDbData = {...newData, ...dbdata}
+        const newDbData = {...dbdata,...newData}
+        console.log(newDbData)
         setDataStorage(newDbData)
     }
 
@@ -71,7 +72,7 @@ const Steps = () => {
 
     return (
        <>
-       <Preeloader />
+       {/* <Preeloader /> */}
         <main>
             <div className="form-bg"></div>
             <FormData />

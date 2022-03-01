@@ -5,7 +5,7 @@ import Services from './Services'
 const Service = () => {
     return (
         <>
-            <Preeloader />
+            {/* <Preeloader /> */}
             <main>
                 <section className='service-list'>
                     <Services />
