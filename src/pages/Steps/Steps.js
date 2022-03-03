@@ -30,24 +30,29 @@ const Steps = () => {
         setUserData(newData)
         const dbdata = getDataStorage();
         const newDbData = {...dbdata,...newData}
-        console.log(newDbData)
         setDataStorage(newDbData)
     }
 
-
    const handleEmailSubmit = (e) => {
       e.preventDefault();
-      setsendLoading('Sending...')
-      const dbdata = SendEmail();
-      dbdata.then(function (response) {
-          if( response.data.send ) {
-            setsendLoading('')
-            history(`/steps/99/${serviceid}/${serviceslug}`);
-          }
-      })
-      dbdata.catch(function (error) {
-          console.log(error);
-      });
+
+      if( parseInt(serviceid) === 3 && parseInt(step) !== 11 ) {
+         history(`/steps/5/${serviceid}/${serviceslug}`);
+     } else {
+         setsendLoading('Sending...')
+         const dbdata = SendEmail();
+         dbdata.then(function (response) {
+            if( response.data.send ) {
+               setsendLoading('')
+               setDataStorage({})
+               history(`/steps/99/${serviceid}/${serviceslug}`);
+            }
+         })
+         dbdata.catch(function (error) {
+            console.log(error);
+         });
+      }
+
   }
 
     const serviceData = {

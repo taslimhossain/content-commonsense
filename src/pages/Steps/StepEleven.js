@@ -12,13 +12,18 @@ const StepEleven = (props) => {
         setFormData((fromData) => ({ ...fromData, [name]: value }));
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        userFormData( fromData );
+        handleEmailSubmit(e);
+    }
 
     return (
         <div className="ccform">
             <p className="you-selected">You selected</p>
             <h2 className="package-name">{serviceTitle}</h2>
             <Link to="/services" className="change-pacage">Change</Link>
-            <form onSubmit={handleEmailSubmit} id="offersubmit">
+            <form onSubmit={handleSubmit} id="offersubmit">
                 <div className="field-row">
                     <label htmlFor="campaignslocation" className="form-label">Which geographic locations do you serve/should we target with your advertising campaigns?</label>
                     <input type="text" name="campaignslocation" defaultValue={getFormValue('campaignslocation')} is_required="true" onChange={handleOnChange} className="form-control" id="campaignslocation" placeholder="Geographic locations" />

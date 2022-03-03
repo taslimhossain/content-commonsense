@@ -10,7 +10,6 @@ const StepOne = (props) => {
 
     const handleOnChange = e => {
         const { name, value } = e.target;
-        console.log(name, value);
         setFormData((fromData) => ({ ...fromData, [name]: value }));
     }
     

@@ -9,7 +9,7 @@ const StepFour = (props) => {
     const [formError, setformError] = useState('No Error')
     const [fromData, setFormData] = useState({})
     const [emailStatus, setEmailStatus] = useState(true)
-    const {serviceid, serviceTitle, serviceslug, userFormData} = props.stepData;
+    const {serviceid, serviceTitle, serviceslug, userFormData, handleEmailSubmit, sendLoading} = props.stepData;
 
     const handleOnChange = e => {
         const { name, value } = e.target;
@@ -18,25 +18,9 @@ const StepFour = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setformError('afefef')
-        userFormData( fromData )
-        if( parseInt(serviceid) === 3 ) {
-            history(`/steps/5/${serviceid}/${serviceslug}`);
-        } else {
-
-            const dbdata = SendEmail();
-            dbdata.then(function (response) {
-                if( response.data.send ) {
-                    history(`/steps/99/${serviceid}/${serviceslug}`);
-                }
-            })
-            dbdata.catch(function (error) {
-                console.log(error);
-            });
-
-        }
+        userFormData( fromData );
+        handleEmailSubmit(e);
     }
-    
 
     return (
         <div className="ccform">
@@ -54,6 +38,7 @@ const StepFour = (props) => {
                     <input type="text" name="industry" defaultValue={getFormValue('industry')} onChange={handleOnChange} className="form-control" id="industry" placeholder="industry" required />
                 </div>
                 <button className="select-offer-btn btn-submit" type="submit"> { parseInt(serviceid) === 3 ? 'Next' : 'Claim Offer' }  </button>
+                <p>{sendLoading}</p>
             </form>
         </div>
     )
