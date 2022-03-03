@@ -444,3 +444,16 @@ a.change-pacage {
   } */
 
 }
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  main {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1035px) {
+  .ccform {
+    margin-left: calc(100vw - 95vw);
+  }
+}
