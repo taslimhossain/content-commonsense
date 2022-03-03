@@ -239,7 +239,7 @@ p.congratulations-description {
   font-size: 18px;
   line-height: 26px;
 }
-form#offersubmit h5 {
+#offersubmit h5 {
   font-size: 16px;
   font-weight: 500;
 }
@@ -251,7 +251,7 @@ label.form-label {
   font-family: 'Futura PT';
 }
 
-form#offersubmit {
+#offersubmit {
   position: absolute;
   left: 0;
   right: 0px;
@@ -333,6 +333,46 @@ a.change-pacage {
 }
 /* End featured css */
 
+/* Start Social share icon */
+
+.social-share {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-share .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.social-share .fa:hover {
+    opacity: 0.7;
+}
+
+.social-share .fa-linkedin {
+  background: #007bb5;
+  color: #ffffff;
+}
+.social-share .fa-whatsapp {
+  background: #25d366;
+  color: #ffffff;
+}
+.social-share .fa-envelope {
+  background: #e02f2f;
+  color: #ffffff;
+}
+
+
+/* End Social share icon */
 
 
 /* sm */
@@ -395,7 +435,7 @@ a.change-pacage {
       box-shadow: none;
   }
 
-  form#offersubmit{
+  #offersubmit{
     bottom:0px;
   }
 

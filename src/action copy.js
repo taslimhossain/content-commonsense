@@ -1,6 +1,5 @@
 import axios from "axios";
-import React, { useState } from 'react'
-
+import { useEffect, useState } from 'react'
 
 export const getServices = {
     1 : '2 Months Free Account Management',
@@ -29,32 +28,21 @@ export const getFormValue = (key) => {
 
 export const SendEmail = () => {
 
-   // const [emailStatus, setEmailStatus] = useState(false)
+    const [emailStatus, setEmailStatus] = useState(false)
 
     const dbdata = getDataStorage();
+    console.log('email sending', dbdata)
+    // const allData = JSON.parse(dbdata);
+    // console.log(allData)
     const formData = {...dbdata, 'sendemail':'yes'}
 
-   const response = axios.post('https://minisite.taslimhossain.com/mailapi/', {...formData })
-    return response;
+    axios.post('https://minisite.taslimhossain.com/mailapi/', {...formData })
+    .then(function (response) {
+        setEmailStatus(response.data.send)
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+
+    return emailStatus;
 }
-
-
-// export const SendEmail = () => {
-
-//     const [emailStatus, setEmailStatus] = useState(false)
-
-//     const dbdata = getDataStorage();
-//     const formData = {...dbdata, 'sendemail':'yes'}
-
-//     axios.post('https://minisite.taslimhossain.com/mailapi/', {...formData })
-//     .then(function (response) {
-//         setEmailStatus(response.data.send)
-//     })
-//     .catch(function (error) {
-//         console.log(error);
-//     });
-
-//     return emailStatus;
-// }
-
-

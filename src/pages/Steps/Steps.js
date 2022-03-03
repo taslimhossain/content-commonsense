@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { getDataStorage, getServices, setDataStorage } from '../../action';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getDataStorage, getServices, SendEmail, setDataStorage } from '../../action';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree ';
@@ -18,7 +18,9 @@ import Preeloader from '../../Preeloader';
 const Steps = () => {
 
     const [userData, setUserData] = useState([])
+    const [sendLoading, setsendLoading] = useState('')
     const {step, serviceid, serviceslug} = useParams();
+    const history = useNavigate();
  
     const stepNumber = parseInt(step);
     const serviceTitle = getServices[serviceid] !== '' ? getServices[serviceid] : '';
@@ -32,11 +34,29 @@ const Steps = () => {
         setDataStorage(newDbData)
     }
 
+
+   const handleEmailSubmit = (e) => {
+      e.preventDefault();
+      setsendLoading('Sending...')
+      const dbdata = SendEmail();
+      dbdata.then(function (response) {
+          if( response.data.send ) {
+            setsendLoading('')
+            history(`/steps/99/${serviceid}/${serviceslug}`);
+          }
+      })
+      dbdata.catch(function (error) {
+          console.log(error);
+      });
+  }
+
     const serviceData = {
         serviceid,
         serviceTitle,
         serviceslug,
-        userFormData
+        sendLoading,
+        userFormData,
+        handleEmailSubmit
     }
 
     const FormData = () => {

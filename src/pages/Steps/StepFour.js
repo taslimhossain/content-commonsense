@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { getFormValue, sendEmail } from '../../action';
+import { getFormValue, SendEmail } from '../../action';
 
 const StepFour = (props) => {
 
     const history = useNavigate();
+    const [formError, setformError] = useState('No Error')
     const [fromData, setFormData] = useState({})
+    const [emailStatus, setEmailStatus] = useState(true)
     const {serviceid, serviceTitle, serviceslug, userFormData} = props.stepData;
 
     const handleOnChange = e => {
@@ -15,18 +18,26 @@ const StepFour = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setformError('afefef')
         userFormData( fromData )
         if( parseInt(serviceid) === 3 ) {
             history(`/steps/5/${serviceid}/${serviceslug}`);
         } else {
 
-            const dbdata = sendEmail();
-            console.log('Hello wrld', dbdata)
+            const dbdata = SendEmail();
+            dbdata.then(function (response) {
+                if( response.data.send ) {
+                    history(`/steps/99/${serviceid}/${serviceslug}`);
+                }
+            })
+            dbdata.catch(function (error) {
+                console.log(error);
+            });
 
-            history(`/steps/99/${serviceid}/${serviceslug}`);
         }
     }
     
+
     return (
         <div className="ccform">
             <p className="you-selected">You selected</p>
