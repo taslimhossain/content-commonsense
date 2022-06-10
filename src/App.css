@@ -115,16 +115,16 @@ button.close {
 }
 
 .popup-content .modal {
-  border: 3px solid #01040C;
+
   padding: 30px;
-  border-radius: 15px;
-  background-color: #ffffff;
+
+  background-color: rgba(255,255,255,.98)
 }
 .popup-content .header {
-  margin-bottom: 18px;
-  font-size: 21px;
-  font-weight: 800;
-  line-height: 24px;
+  margin-bottom: 1em;
+  font-size: 1.625rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 .content p {
   font-size: 1.375rem;
@@ -415,7 +415,7 @@ a.change-pacage {
     width: 100%;
   }
   .popup-content {
-    width: 80%;
+    width: 100%;
     box-sizing: border-box;
   }
   .content p {
@@ -456,4 +456,49 @@ a.change-pacage {
   .ccform {
     margin-left: calc(100vw - 95vw);
   }
+}
+
+
+
+
+@media  (max-width: 624px) {
+
+  .App main{ margin-bottom: 0; padding-bottom: 0;}
+
+.service-item { height: calc(100vh - 261px);}
+
+
+
+.slick-slide {
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+.service-item h2{ padding-top: 2rem;}
+
+
+
+.content p {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 1em;
+}
+
+.popup-content{ padding: 0 !important;}
+
+
+.popup-content .modal {
+
+  height: 100vh;overflow: auto;
+}
+
+.modal a.select-offer-btn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 63px;
+}
+
+
 }

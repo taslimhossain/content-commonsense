@@ -60,8 +60,9 @@ const Services = () => {
                         <p>Our only condition is that you already have a website that does its job. </p>
                         <p>If we send the best traffic in the world to a bad website... results will be mediocre.</p>
                         <p>But if you have a website that generates leads but needs a few tweaks and some great traffic, let's go!</p>
-                        <Link to="/steps/1/1/2-months-free-account-management" currentPath='/submissions' className='select-offer-btn'>I Want This!</Link>
+                     
                       </div>
+                      <Link to="/steps/1/1/2-months-free-account-management" currentPath='/submissions' className='select-offer-btn'>I Want This!</Link>
                     </div>
                   )}
                 </Popup>
